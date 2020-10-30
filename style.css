@@ -5,7 +5,7 @@ main{
   margin:0px;
 }
 #computer-screen {
-  border: 1px purple dashed;
+  border: 1px green dashed;
   width: 900px;
   height:635px;
   background-image: url("/img/xtEdit.png");
