@@ -5,10 +5,10 @@ main{
   margin:0px;
 }
 #computer-screen {
-  border: 1px green dashed;
+  border: 5px black dashed;
   width: 900px;
   height:635px;
-  background-image: url("/img/xtEdit.png");
+  background-image: url("./img/xtEdit.png");
   background-size: 900px;
   background-repeat: no-repeat;
   color: #23f297;
