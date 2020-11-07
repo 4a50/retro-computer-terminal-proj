@@ -1,26 +1,2 @@
-html{
-  max-width: 2000px;
-}
-main{
-  margin:0px;
-}
-#computer-screen {
-  border: 5px black dashed;
-  width: 900px;
-  height:635px;
-  background-image: url("./img/xtEdit.png");
-  background-size: 900px;
-  background-repeat: no-repeat;
-  color: #23f297;
-  text-shadow: 2px 2px 15px #23f297;  
-}
-#monitor-display{
-  padding:100px 0px 0px 130px;
-}
-#computer-screen p{
-filter: blur(0.6px);
-font-family: 'VT323', monospace;  
-word-spacing: 2px; 
-padding: 3px 0px 0px 0px;
-font-size: 90%;
-}
+@import "css/base.css";
+@import "css/layout.css";

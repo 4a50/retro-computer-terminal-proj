@@ -1,0 +1,31 @@
+:root{
+  --cpuMonSize:  100;
+}
+
+.computer-screen {
+  background-image: url("/img/xtEdit.png");
+  background-repeat: no-repeat;
+  background-size: 100%;
+
+  border: 2px;
+  border-color:purple;
+  border-style: dashed;
+  width: 100vw;
+  height: 70vw;
+  
+}
+.monitor-readout{
+  padding:11% 0% 0% 16%;
+}
+.monitor-readout p{
+
+color: #23f297;
+text-shadow: 2px 2px 15px #23f297;  
+filter: blur(1.1px);
+font-family: 'VT323', monospace;  
+word-spacing: 2px; 
+/* If you adjust .computer-screen width, you have to adjust the font too */
+font-size: 2vw;
+
+}
+
