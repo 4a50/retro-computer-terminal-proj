@@ -1,2 +1,9 @@
 # retro-computer-terminal-proj
-Simulates a IBM XT-type computer terminal
+Simulates a 1980s era computer terminal.
+
+## Author - JP Jones
+
+Resources:
++ express.js
++ JQuery
+

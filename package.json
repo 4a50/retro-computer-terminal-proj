@@ -1,0 +1,24 @@
+{
+  "name": "retro-computer-terminal-proj",
+  "version": "1.0.0",
+  "description": "Simulates a IBM XT-type computer terminal",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/4a50/retro-computer-terminal-proj.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/4a50/retro-computer-terminal-proj/issues"
+  },
+  "homepage": "https://github.com/4a50/retro-computer-terminal-proj#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
