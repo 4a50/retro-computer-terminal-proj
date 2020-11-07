@@ -10,7 +10,7 @@ var maxLinesOnScreen = 23;
 //Add all the elements of the monitorArray
 function initMonitor() {
   for (var i = 0; i < maxLinesOnScreen; i++) {
-    $("#monitor-display").append(`<p id="line-${i}"><br />`);
+    $(".monitor-readout").append(`<p id="line-${i}"><br />`);
   }
 }
 function addTextToLineScreen() {
