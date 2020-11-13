@@ -26,7 +26,8 @@ function handlePokeRequest(req, res) {
     superagent.get(url)
       .then(data => (new Pokemon(data.body)))
       .then((pokeObj) => res.send(pokeObj))
-      .catch(console.log('Error in PokeDex Retrieval'));
+      .catch(err => console.log('Error in PokeDex Retrieval', err));
+
   }
   catch (err) {
     console.log('Couldn\'t access the Pokemon:', err);
