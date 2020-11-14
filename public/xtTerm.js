@@ -1,11 +1,28 @@
 'use strict'
+// function Neighborhood(rawDataObject) {
+//   // "for in" loop -> for property in object
+//   for (let key in rawDataObject) {
+//     this[key] = rawDataObject[key];
+//   }
+// }
+
 var maxString = 'Version 3.30 (C)Copyright International Business Machines Corp 1981, 1987';
 var userInput = '';
 var firstReturn = true;
 var monitorArray = [];//['Initial OS 4a50 Systems', 'Initializing Boot Parameters', "[ OK ] Synching mainframe to digital domains", "Connected at (1200) bps", "Running TELNET query", "Response Received - 10b"];
 var monitorLineTracker = 0;
 var maxLinesOnScreen = 23;
+var pokedex = [];
+//Constructors
+function Pokedex(pokemon) {
+  for (let key in pokemon) {
+    this[key] = pokemon[key];
+  }
 
+  pokedex.push(this);
+
+
+}
 //Set's the <p> tags for the number of lined on the screen
 //Add all the elements of the monitorArray
 function initMonitor() {
@@ -21,6 +38,10 @@ function addNextLineToScreen() {
   evalUserCommand(userInput.toUpperCase());
   monitorLineTracker++;
 }
+
+// function () {
+
+// }
 /// Main Function to determine what to do with the input
 function userInputManagement(charCode, nonText = false) {
   if (nonText) {
@@ -80,6 +101,28 @@ function clearTheScreen() {
 
 
 }
+
+//#######################################
+
+Pokedex.readJson = (filePath) => {
+  console.log('filePath:', filePath);
+  const ajaxSettings = { method: 'get', dataType: 'json' };
+  $.ajax(filePath, ajaxSettings)
+    .then(data => {
+      console.log('data', data);
+      new Pokedex(data);
+      console.log(pokedex);
+      console.log('jp', pokedex[0].weight);
+    });
+
+}
+Pokedex.displayStats = () => {
+  let appendMain = $('main');
+  let pokehtml = $('.pokedisplay');
+  $('.pokedisplay #weight').text = pokedex[0].weight;
+
+}
+//#######################################
 //Events
 //text input
 $("body").keypress(function (e) {
@@ -95,4 +138,9 @@ $("body").keydown(function (e) {
 });
 
 //Execute
+Pokedex.readJson('https://pokeapi.co/api/v2/pokemon/charizard/');
+Pokedex.readJson('https://pokeapi.co/api/v2/pokemon/bulbasaur/');
+
 initMonitor();
+
+//pokedex[1].displayStats();
