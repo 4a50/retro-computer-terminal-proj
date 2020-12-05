@@ -19,7 +19,7 @@ const client = new pg.Client(DATABASE_URL);
 app.use(cors());
 
 
-app.get('/pokemon', handlePokeRequest);
+app.get('/pokemon/:pokemon', handlePokeRequest);
 app.get('/addcmd', databaseAdd);
 app.get('/dispData', databaseDisplay);
 
@@ -53,14 +53,12 @@ function databaseAdd(req, res) {
 }
 function handlePokeRequest(req, res) {
   try {
-    console.log('handlePokeRequest');
-    let pokeCharacter = req.query.pokemon;
-    let url = `https://pokeapi.co/api/v2/pokemon/${pokeCharacter}`;
+    let pokeCharacter = req.params.pokemon;
+    let url = `https://pokeapi.co/api/v2/pokemon/${pokeCharacter}/`;
     superagent.get(url)
       .then(data => (new Pokemon(data.body)))
       .then((pokeObj) => res.send(pokeObj))
       .catch(err => console.log('Error in PokeDex Retrieval', err));
-
   }
   catch (err) {
     console.log('Couldn\'t access the Pokemon:', err);
