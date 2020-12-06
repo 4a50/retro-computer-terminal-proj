@@ -8,6 +8,7 @@ Simulates a 1980s era computer terminal, but can do so much more
 
 + express.js
 + JQuery
++ superagent
 
 ## APIs Used
 
